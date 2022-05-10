@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
+
+import './App.css';
+
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
@@ -7,13 +10,12 @@ import Register from './components/Register/Register';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
-import './App.css';
+
  
 const particlesOptions = {
-  //customize this to your liking
   particles: {
     number: {
-      value: 30,
+      value: 100,
       density: {
         enable: true,
         value_area: 800
@@ -84,6 +86,7 @@ class App extends Component {
         })
       })
       .then(response => response.json())
+      .catch(console.log("what to do"))
       .then(response => {
         if (response) {
           fetch('http://localhost:3000/image', {
@@ -91,13 +94,12 @@ class App extends Component {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
               id: this.state.user.id
-            })
-          })
+            })})
             .then(response => response.json())
-            .then(count => {
-              this.setState(Object.assign(this.state.user, { entries: count}))
-            })
+            .catch(console.log("are we getting this error?"))
+            .then(count => { this.setState(Object.assign(this.state.user, { entries: count}))})
             .catch(console.log)
+            .finally(console.log('where do we go from here?'))
 
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
@@ -112,6 +114,7 @@ class App extends Component {
       this.setState({isSignedIn: true})
     }
     this.setState({route: route});
+
   }
 
   render() {
