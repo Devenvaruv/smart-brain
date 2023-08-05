@@ -10,6 +10,7 @@ Face Recognition: After signing in, users can enter an image URL in the input fi
 The app is composed of the following components:
 
 App: The main component that handles the app's state and logic.
+
 FaceRecognition: Renders the image with detected faces highlighted.
 Navigation: Displays navigation options based on user authentication status.
 Signin: Provides a form for users to sign in to their accounts.
