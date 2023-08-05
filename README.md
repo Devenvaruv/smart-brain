@@ -12,9 +12,15 @@ The app is composed of the following components:
 App: The main component that handles the app's state and logic.
 
 FaceRecognition: Renders the image with detected faces highlighted.
+
 Navigation: Displays navigation options based on user authentication status.
-Signin: Provides a form for users to sign in to their accounts.
+
+Sign-in: Provides a form for users to sign in to their accounts.
+
 Register: Provides a form for new users to register.
+
 Logo: Renders the logo of the app.
+
 ImageLinkForm: Allows users to input an image URL and submit it for face detection.
+
 Rank: Displays the user's name and rank based on their number of entries.
